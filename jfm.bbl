@@ -1,0 +1,76 @@
+\begin{thebibliography}{12}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\def\au#1{#1} \def\ed#1{#1} \def\yr#1{#1}\def\at#1{#1}\def\jt#1{\textit{#1}}
+  \def\bt#1{#1}\def\bvol#1{\textbf{#1}} \def\vol#1{#1} \def\pg#1{#1}
+  \def\publ#1{#1}\def\arxiv#1{#1}\def\org#1{#1}\def\st#1{\textit{#1}}
+
+\bibitem[Afkhami {\em et~al.\/}(2018)Afkhami, Buongiorno, Guion, Popinet,
+  Saade, Scardovelli \& Zaleski]{afkhami_transition_2018}
+{\sc \au{Afkhami, S.}, \au{Buongiorno, J.}, \au{Guion, A.}, \au{Popinet, S.},
+  \au{Saade, Y.}, \au{Scardovelli, R.} \& \au{Zaleski, S.}} \yr{2018}
+  \at{Transition in a numerical model of contact line dynamics and forced
+  dewetting}.  \jt{J. Comput. Phys.}  \bvol{374},  \pg{1061--1093}.
+
+\bibitem[Afkhami {\em et~al.\/}(2009)Afkhami, Zaleski \&
+  Bussmann]{afkhami_mesh-dependent_2009}
+{\sc \au{Afkhami, S.}, \au{Zaleski, S.} \& \au{Bussmann, M.}} \yr{2009}  \at{A
+  mesh-dependent model for applying dynamic contact angles to {VOF}
+  simulations}.  \jt{J. Comput. Phys.}  \bvol{228}~(15),  \pg{5370--5389}.
+
+\bibitem[Cheng {\em et~al.\/}(2018)Cheng, Wang, Xu, Liu \&
+  Sui]{cheng_numerical_2018}
+{\sc \au{Cheng, Y.}, \au{Wang, F.}, \au{Xu, J.}, \au{Liu, D.} \& \au{Sui, Y.}}
+  \yr{2018}  \at{Numerical investigation of droplet spreading and heat transfer
+  on hot substrates}.  \jt{International Journal of Heat and Mass Transfer}
+  \bvol{121},  \pg{402--411}.
+
+\bibitem[Duvivier {\em et~al.\/}(2013)Duvivier, Blake \&
+  De~Coninck]{duvivier_toward_2013}
+{\sc \au{Duvivier, D.}, \au{Blake, T.D.} \& \au{De~Coninck, J.}} \yr{2013}
+  \at{Toward a predictive theory of wetting dynamics}.  \jt{Langmuir}
+  \bvol{29}~(32),  \pg{10132--10140}.
+
+\bibitem[Korobkin {\em et~al.\/}(2008)Korobkin, Ellis \&
+  Smith]{korobkin_trapping_2008}
+{\sc \au{Korobkin, A.A.}, \au{Ellis, A.S.} \& \au{Smith, F.T.}} \yr{2008}
+  \at{Trapping of air in impact between a body and shallow water}.  \jt{J.
+  Fluid Mech.}  \bvol{611},  \pg{365--394}.
+
+\bibitem[Kumar \& Pathak(2024)]{kumar_droplet_2024}
+{\sc \au{Kumar, A.} \& \au{Pathak, M.}} \yr{2024}  \at{Droplet impact
+  characteristics on hydrophobic surfaces with partial electrowetting effects}.
+   \jt{Physics of Fluids}  \bvol{36}~(9),  \pg{092126}.
+
+\bibitem[Li \& Thoroddsen(2015)]{li_time-resolved_2015}
+{\sc \au{Li, E.Q.} \& \au{Thoroddsen, S.T.}} \yr{2015}  \at{Time-resolved
+  imaging of a compressible air disc under a drop impacting on a solid
+  surface}.  \jt{J. Fluid Mech.}  \bvol{780},  \pg{636--648}.
+
+\bibitem[Mandre {\em et~al.\/}(2009)Mandre, Mani \&
+  Brenner]{mandre_precursors_2009}
+{\sc \au{Mandre, S.}, \au{Mani, M.} \& \au{Brenner, M.P.}} \yr{2009}
+  \at{Precursors to {Splashing} of {Liquid} {Droplets} on a {Solid} {Surface}}.
+   \jt{Phys. Rev. Lett.}  \bvol{102}~(13),  \pg{134502}.
+
+\bibitem[Popinet(2003)]{popinet_gerris_2003}
+{\sc \au{Popinet, S.}} \yr{2003}  \at{Gerris: a tree-based adaptive solver for
+  the incompressible euler equations in complex geometries}.  \jt{J. Comput.
+  Phys.}  \bvol{190}~(2),  \pg{572--600}.
+
+\bibitem[Popinet(2009)]{popinet_accurate_2009}
+{\sc \au{Popinet, S.}} \yr{2009}  \at{An accurate adaptive solver for
+  surface-tension-driven interfacial flows}.  \jt{J. Comput. Phys.}
+  \bvol{228}~(16),  \pg{5838--5866}.
+
+\bibitem[Smith {\em et~al.\/}(2003)Smith, Li \& Wu]{smith_air_2003}
+{\sc \au{Smith, F.T.}, \au{Li, L.} \& \au{Wu, G.X.}} \yr{2003}  \at{Air
+  cushioning with a lubrication/inviscid balance}.  \jt{J. Fluid Mech.}
+  \bvol{482},  \pg{291--318}.
+
+\bibitem[\v{S}ikalo {\em et~al.\/}(2002)\v{S}ikalo, Marengo, Tropea \&
+  Gani\'{c}]{sikalo_analysis_2002}
+{\sc \au{\v{S}ikalo, v.}, \au{Marengo, M.}, \au{Tropea, C.} \& \au{Gani\'{c},
+  E.N.}} \yr{2002}  \at{Analysis of impact of droplets on horizontal surfaces}.
+   \jt{Experimental Thermal and Fluid Science}  \bvol{25}~(7),  \pg{503--510}.
+
+\end{thebibliography}
