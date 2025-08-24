@@ -213,33 +213,184 @@ In order to compare the dynamics of droplet motion, we first deployed droplets t
 
 \subsection{Phase Diagram and Classification of Electrowetting-Induced Wettability}
 
-When droplet impact the substrate with different electrowetting-induced wettability, it exhibits distinct dynamic reaction owing to voltage-induced variations in the equilibrium contact angle. Since the contact angle governs the balance of interfacial forces, the difference in wettability significantly influences the spreading, retraction, and rebound behaviour of the droplet. On a substrate with an equilibrium contact angle of $90^\circ$, the droplet follows the classical sequence of spreading, receding, and rebounding. At low impact velocities (i.e., low Weber numbers), the droplet may remain entirely separated from the substrate by a thin air layer, resulting in non-contact bouncing. At sufficiently high Weber numbers, the droplet undergoes splashing, with the emission of secondary droplets. To systematically characterise the influence of electrowetting, we construct a phase diagram in the applied voltage-Weber number plane that delineates the regimes of droplet impact behaviour under varying wettability conditions. 
+When droplet impact the substrate with different electrowetting-induced wettability, it exhibits distinct dynamic reaction owing to voltage-induced variations in the equilibrium contact angle. Since the contact angle governs the balance of interfacial forces, the difference in wettability significantly influences the spreading, retraction, and rebound behaviour of the droplet. On a substrate with an equilibrium contact angle of $90^\circ$, the droplet follows the classical sequence of spreading, receding, and rebounding. At low impact velocities (i.e., low Weber numbers), the droplet may remain entirely separated from the substrate by a thin air layer, resulting in non-contact bouncing. At sufficiently high Weber numbers, the droplet undergoes splashing, with the emission of secondary droplets. To systematically characterise the influence of electrowetting, we construct a phase diagram in the applied voltage-Weber number plane that delineates the regimes of droplet impact behaviour under varying wettability conditions. Figure \ref{fig:phase} delineates the behavioural phase diagram of droplet impact regimes across applied voltages and Weber numbers, encompassing low-velocity complete rebound and cavity-induced jetting, alongside moderate-to-high-velocity partial rebound, deposition, and columnar liquid jetting regimes.
+
+
 
  \begin{figure}
   \centerline{\includegraphics[width=0.8\textwidth]{fig/phase.pdf}}
-  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
- \label{fig:mesh}
+  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations. Open-circle markers denote the selected cases corresponding to each regime.}
+ \label{fig:phase}
  \end{figure}
- 
- When a droplet impacts a solid wall at relatively high velocity, it typically exhibits splashing. For low-viscosity droplets, however, splashing behaviour is typically suppressed \citep{jian_two_2018}. Upon contacting the substrate, the droplet's kinetic energy undergoes rapid conversion into surface energy. This process drives spreading to a maximum radius. Subsequently, under the influence of significant surface energy potential, the droplet undergoes accelerated retraction. Capillary waves converging radially inwards from the spreading periphery focusing at the axisymmetric centre, thereby initiating vertical columnar jet formation. 
 
- The state of Complete rebound is noticed to exist widely in the range of $We$ number less than $5$. The bouncing mechanism is predicated on the persistence of an air film sustained at low impact velocities. This sub-micrometre air cushion dissipates kinetic energy and reverses the momentum of droplets. The droplets 
-
-
+ Figure \ref{fig:dropA} presents a morphological chronology of droplet evolution across distinct regimes, capturing the complete progression from initial contact to final configuration. Sequentially arranged are: columnar jetting, partial rebound, deposition, cavity-induced breakup, and complete rebound -- corresponding to the phase diagram's open-circle markers. Key features include central jet ejection (columnar jetting), necking phenomena (partial rebound), and filamentous jets (cavity regime/breakup), while deposition and complete rebound are distinguished by their final equilibrium states.
 
 
  \begin{figure}
   \centerline{\includegraphics[width=1.0\textwidth]{fig/dropA.pdf}}
   \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
- \label{fig:mesh}
+ \label{fig:dropA}
+ \end{figure}
+ 
+ When a droplet impacts a solid wall at relatively high velocity, it typically exhibits splashing. For low-viscosity droplets, however, splashing behaviour is typically suppressed \citep{jian_two_2018}. Upon contacting the substrate, the droplet's kinetic energy undergoes rapid conversion into surface energy. This process drives spreading to a maximum radius. Subsequently, under the influence of significant surface energy potential, the droplet undergoes accelerated retraction. Capillary waves converging radially inwards from the spreading periphery focusing at the axisymmetric centre, thereby initiating vertical columnar jet formation. Figure \ref{fig:cojet} illustrates the droplet impact sequence from initial spreading through retraction to capillary wave convergence culminating in vertical liquid jet formation. Conversely, the cavity-jet/breakup regime manifests at low Weber numbers. Here, the air film at the droplet's base remains intact throughout impact. During spreading, slow-propagating capillary waves converge centrally, generating an axial cavity. Subsequent accelerated retraction causes cavity collapse, inducing high-velocity jet ejection. This process typically culminates in extensive fragmentation due to vapour cavity implosion. Figure \ref{fig:cajet} delineates the complete evolution of central cavity formation through collapse-induced jetting. The implosion-driven jets exhibit elevated stagnation pressures, yielding ejected micro-droplets with enhanced velocities and reduced diameters.
+
+ \begin{figure}
+  \centerline{\includegraphics[width=1.0\textwidth]{fig/cojet.pdf}}
+  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
+ \label{fig:cojet}
  \end{figure}
 
+ \begin{figure}
+  \centerline{\includegraphics[width=1.0\textwidth]{fig/cajet.pdf}}
+  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
+ \label{fig:cajet}
+ \end{figure}
+
+
+
+ Within the moderate impact velocity regime, droplets typically achieve extensive spreading radii. Owing to substantial surface energy storage, accelerated retraction imparts sufficient kinetic energy to induce necking phenomena, ultimately enabling rebound detachment (partial rebound). In contrast, during deposition events, droplets possess insufficient kinetic energy upon impact. Significant viscous dissipation during spreading depletes momentum reserves, precluding rebound. Consequently, residual energy is exhausted through damped capillary-inertial oscillations until complete immobilisation (deposition). 
+
+
+%  To elucidate more clearly the evolution of energy between the two regimes, we present the temporal variation of the droplet's energy.
+
+% \begin{equation}
+%   E_\mathrm{{total} } = E_\mathrm{k} + E_\mathrm{\gamma} + E_\mathrm{e} + E_\mathrm{g} - E_\mathrm{d}.
+%   \label{energy equation}
+% \end{equation}
+
+
+%  The energy balance during droplet impact fundamentally involves kinetic energy $ E_\mathrm{k} $, interfacial energy $ E_\mathrm{\gamma} $, and viscous dissipation $E_\mathrm{d}$ (gravitational potential energy $ E_\mathrm{g} $ being negligible). Within electrowetting frameworks, the imposed electrical energy can usually be expressed as $ E_\mathrm{e} = A_\mathrm{SL} \cdot \epsilon_0 \epsilon_r \phi^2  / (2d) $. And the interfacial energy is 
+
+% \begin{equation}
+%    E_\mathrm{\gamma} = \gamma_\mathrm{LG} A_\mathrm{LG} + \gamma_\mathrm{SL} A_\mathrm{SL} + \gamma_\mathrm{SG} A_\mathrm{SG} = \gamma_\mathrm{LG} A_\mathrm{LG} + ( \gamma_\mathrm{SL} - \gamma_\mathrm{SG} ) A_\mathrm{SL} + \gamma_\mathrm{SG} A_\mathrm{S} .
+%   % = \gamma_\mathrm{LG} A_\mathrm{LG} + \gamma_\mathrm{SL}(V) A_\mathrm{SL} + \gamma_\mathrm{SG} (A_\mathrm{S} - A_\mathrm{SL}) \\
+%   \label{surface energy equation}
+% \end{equation}
+
+% \noindent Considering $\gamma_\mathrm{SG} A_\mathrm{S}$ as the reference surface energy constant, the Young Laplace equation $\gamma_\mathrm{LG} \cos(\theta_{\mathrm{s}}) = \gamma_\mathrm{SG} - \gamma_\mathrm{SL} $ is substituted into Equation~\ref{surface energy equation} to simplify and yield:
+
+% \begin{equation}
+%    \Delta E_\mathrm{\gamma} = \gamma_\mathrm{LG} ( A_\mathrm{LG} - A_\mathrm{SL} \cos(\theta_{\mathrm{s}}) ) .
+%   \label{surface energy short equation}
+% \end{equation}
+
+% \noindent Equation~\ref{Young-Lippmann equation}
+
+% \begin{equation}
+%    \Delta E_\mathrm{\gamma} = \gamma_\mathrm{LG} ( A_\mathrm{LG} - A_\mathrm{SL} \cos\theta_{\mathrm{ew}} + A_\mathrm{SL} \frac{\epsilon_0 \epsilon_r}{2 \gamma_\mathrm{LG} d} \phi^2  ) = \gamma_\mathrm{LG} ( A_\mathrm{LG} - A_\mathrm{SL} \cos\theta_{\mathrm{ew}} ) + E_\mathrm{e}.
+%   \label{surface energy short equation}
+% \end{equation}
+
+% \noindent After considering the surface energy as the change in the overall contact angle,
+
+% \begin{equation}
+%   \Delta E_\mathrm{{total} } = E_\mathrm{k} + \Delta E_\mathrm{\gamma_{ew}} - E_\mathrm{d}.
+%   \label{all energy equation}
+% \end{equation}
+
+
+To elucidate the energy evolution across the two regimes, we consider the total energy of the droplet and substrate system. The relevant energetic contributions are the kinetic energy $E_k$, the interfacial (capillary) energy $E_\gamma$, the electrostatic energy stored in the dielectric $E_e$, the gravitational potential $E_g$ (which may be negligible in the small-Bond-number limit), and the viscous dissipation $E_d$. The integrated energy balance between an initial time $0$ and time $t$ reads
+
+\begin{equation}
+  \Delta\big( E_k + E_g + E_\gamma + E_e \big) = - E_d + W_{\rm ext}.
+  \label{eq:energy_general}
+\end{equation}
+
+\noindent where \(W_{\rm ext}\) denotes any external mechanical work (zero in the absence of external forcing). The electrostatic energy stored in the dielectric under the contact patch (parallel-plate approximation) is
+
+\begin{equation}
+  E_e(t)=\tfrac{1}{2}C(t)\,\phi^2
+  = \tfrac{1}{2}\frac{\epsilon_0\epsilon_r A_{\rm SL}(t)}{d}\,\phi^2,
+  \label{eq:Eelec}
+\end{equation}
+
+\noindent where $\phi$ denotes the applied potential (constant-voltage case), $d$ the dielectric thickness, and $A_{\rm SL}(t)$ the instantaneous solid-liquid contact area.
+
+It is often convenient to express the interfacial energy using Young's relation. Taking $\gamma_{\rm SG} A_{\rm S}$ as an arbitrary reference (constant) contribution and using
+$\gamma_{\rm LG}\cos\theta_{\rm s}=\gamma_{\rm SG}-\gamma_{\rm SL}$, the change in capillary energy relative to the reference can be written
+
+\begin{equation}
+  \Delta E_\gamma = \gamma_{\rm LG}\big( A_{\rm LG} - A_{\rm SL}\cos\theta_{\rm s}\big).
+  \label{eq:DeltaEgamma}
+\end{equation}
+
+\noindent Under electrowetting \ref{Young-Lippmann equation} limit, if we compute the capillary energy using the voltage-dependent contact angle $\theta_{\rm ew}$,
+
+\begin{equation}
+  E_\gamma^{\rm (ew)} = \gamma_{\rm LG}\big( A_{\rm LG} - A_{\rm SL}\cos\theta_{\rm ew}\big),
+\end{equation}
+
+\noindent then substituting (\ref{Young-Lippmann equation}) yields the identity
+\begin{equation}
+  E_\gamma^{\rm (ew)}(t) = \Delta E_\gamma(t) - \underbrace{\frac{\epsilon_0\epsilon_r A_{\rm SL}(t)\phi^2}{2d}}_{E_e(t)}.
+  \label{eq:egamma_ew_relation}
+\end{equation}
+
+\noindent Equation~\eqref{eq:egamma_ew_relation} demonstrates why we reduces the electrical term to the capillary energy. Therefore, we write the global balance in the commonly used case with no external mechanical work, the energy budget reduces to:
+
+\begin{equation}
+  \Delta\big( E_k + E_g + E_\gamma^{\rm (ew)}\big) = -E_d.
+  \label{eq:global energy}
+\end{equation}
+
+
+ \begin{figure}
+  \centerline{\includegraphics[width=1.0\textwidth]{fig/dropET.pdf}}
+  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
+ \label{fig:energy}
+ \end{figure}
+
+ Figure \ref{fig:energy} delineates the temporal evolution of the energy budget for two regimes: partial rebound (Fig.~\ref{fig:energy}$a$) and deposition (Fig.~\ref{fig:energy}$b$). The dynamics are predominantly governed by the interplay and conversion between kinetic energy ($E_k$), surface energy ($E_\gamma$), and viscous dissipation ($E_d$). In the case of partial rebound (Fig.~\ref{fig:energy}$a$), the initial kinetic energy is rapidly depleted during the early spreading stage ($t^* < 0.4$), being primarily converted into surface energy to create a new liquid-gas interface and into energy dissipated through viscous effects. The surface energy peaks concomitantly with the maximum spreading diameter. Crucially, during the subsequent receding phase ($1.5 < t^* < 3.5$), a significant part of the stored surface energy is converted back into kinetic energy, driving the recoil of the lamella and the uplift of the central dome. However, the viscous dissipation $E_d$ grows monotonically. This energy loss ultimately inhibits full recoil, leaving the droplet in a partially rebounded equilibrium state. The final morphology is thus a direct consequence of the balance between the recoverable surface energy and the energy lost to dissipation.
+
+ Conversely, the energy history for the deposition case (Fig.~\ref{fig:energy}$b$) reveals a distinctly different pathway. While the initial conversion from kinetic to surface energy is similar, the key distinction lies in the retraction stage. Here, the dissipation rate is significantly higher, as evidenced by the steeper slope of $E_d$, often due to stronger interactions within fluid. This heightened dissipation effectively arrests the retraction stage. The energy available for recoil is insufficient to overcome the combined effects of surface adhesion. The surface energy keeps at a relatively high value with a significant reconversion into kinetic energy. Therefore, the droplet will oscillate up and down repeatedly on the ground until all its kinetic energy is exhausted, and settles into a stable, pancake-like deposited state. The energy budget demonstrates that deposition arises once viscous dissipation exhausts the droplet's kinetic energy and prevents the release of surface energy, effectively arresting the interface in a minimum surface energystate.
+
+
+ The state of Complete rebound is noticed to exist widely in the range of $We$ number less than $5$. The bouncing mechanism is predicated on the persistence of an air film sustained at low impact velocities. This sub-micrometre air cushion dissipates kinetic energy and reverses the momentum of droplets. Consequently, the interposition of the air film prevents direct contact between the droplet and substrate during low-velocity impact; thereby eliminating wettability-dependent effects. As this mechanism has been extensively documented in prior studies, it is not the primary focus of the present analysis.
+
+
+
 \subsection{Influence of Electric Potential Decay on Droplet Behavior}
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.4\textwidth]{fig/decay.pdf}}
+  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
+ \label{fig:energy}
+ \end{figure}
+
+ \begin{figure}
+  \centerline{\includegraphics[width=1.0\textwidth]{fig/dropETC.pdf}}
+  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
+ \label{fig:energy}
+ \end{figure}
+
+
+ Incorporating a voltage attenuation coefficient into this model induces profound alterations in droplet dynamics. Modifying the $\alpha$-parameter in Equation~\ref{dynamic electric potential} drastically perturbs the interfacial voltage distribution. Consequently, the formerly uniform solid-liquid contact angle is supplanted by a conical distribution-minimised centrally and maximised peripherally-owing to voltage decay.
+
+
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.8\textwidth]{fig/dropR.pdf}}
+  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
+ \label{fig:energy}
+ \end{figure}
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.8\textwidth]{fig/dropH.pdf}}
+  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
+ \label{fig:energy}
+ \end{figure}
+
+
 
 \subsection{Frequency-Dependent Response of Electrowetting-Induced Motion}
 
 
+
+
+
 \section{Conclusion}\label{sec:Conclusion}
+
+
 
 
 
