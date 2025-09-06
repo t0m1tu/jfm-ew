@@ -44,6 +44,8 @@ Authors should not enter keywords on the manuscript, as these must be chosen by 
 \section{Introduction}
 \label{sec:headings}
 
+In dielectrowetting research, the effect of non-uniform electric fields on liquid wetting has been established. \cite{mchale_dielectrowetting_2011}, for instance, demonstrated that tailored non-uniform fields enable control of the contact angle and wetting state.
+
 The dynamics of droplet impact on solid surfaces is a classical problem in fluid mechanics, with various engineering applications, including inkjet printing, spray cooling, and microfluidic actuation. The interaction between inertia, surface tension, viscosity, and wettability gives rise to complex behaviors, such as spreading, retraction, rebound, or splashing. In recent years, the ability to actively modulate wettability through external stimuli has attracted significant interest, particularly via electrowetting-on-dielectric (EWOD). In EWOD systems, the apparent contact angle of a droplet can be dynamically controlled by applying an electric potential across a dielectric-coated electrode, enabling real-time tuning of droplet behavior. 
 
 Previous studies have extensively investigated the role of electrowetting in modifying contact angle hysteresis, controlling spreading dynamics, and suppressing rebound. Most of these works, however, assume that the applied electric field is spatially uniform. In practical implementations--especially when thin electrodes with finite conductivity or localized voltage sources are employed--the electric potential may decay laterally along the substrate. This non-uniformity can lead to spatial gradients in wettability and contact angle, potentially altering the droplet impact regimes. Despite its physical relevance, the influence of electric potential decay on droplet dynamics has received little attention and remains poorly understood.
@@ -58,11 +60,11 @@ The paper is organized as follows. Section~\ref{sec:Problem and method} introduc
 
  \begin{figure}
   \centerline{\includegraphics[width=0.5\textwidth]{fig/model.eps}}
-  \caption{model}
+  \caption{Schematic of the physical model and governing parameters. A liquid droplet of radius $R$, density $\rho_{l}$ and viscosity $\mu_{l}$ impacts a hydrophobic substrate with initial velocity $U_{0}$ under gravity $g$. The surrounding gas has density $\rho_{g}$ and viscosity $\mu_{g}$. The liquid-gas interface is characterized by surface tension $\gamma$. The substrate is subject to electrowetting, with the apparent contact angle $\theta$ modified by an electric potential that decays along the substrate as $\phi e^{-\alpha x}$. The coordinate system is defined by the radial direction $r$ and vertical direction $z$.}
  \label{fig:domain}
  \end{figure}
 
-Consider a water droplet of diameter $D$ placed upon the substrate exhibiting electric potential decay $\phi e^{-\alpha r}$, where $\alpha$ is the electric potential decay constant. The droplet impacts the electrowetting surface with the velocity $U_0$. The density and viscosity are denoted by $\rho$ and $\mu$, with subscripts $l$ and $g$ indicating the liquid and the surrounding gas. In the electrowetting on dielectric (EWOD) phenomena under consideration, the wettability of substrate is varied by applied electric current. The variation of contact angle which is inducted by electrowetting can be described by the Young-Lippmann equation
+Consider a water droplet of diameter $D$ placed upon the substrate exhibiting electric potential decay $\phi_0 e^{-\alpha r}$, where $\alpha$ is the electric potential decay constant. The droplet impacts the electrowetting surface with the velocity $U_0$. The density and viscosity are denoted by $\rho$ and $\mu$, with subscripts $l$ and $g$ indicating the liquid and the surrounding gas. In the electrowetting on dielectric (EWOD) phenomena under consideration, the wettability of substrate is varied by applied electric current. The variation of contact angle which is inducted by electrowetting can be described by the Young-Lippmann equation
 
 \begin{equation}
 	\cos(\theta_{\mathrm{ew}}) = \cos\theta_{\mathrm{s}} + \frac{\epsilon_0 \epsilon_r}{2 \gamma d} \phi^2 .
@@ -179,7 +181,7 @@ Electrowetting technique enables dynamic control of surface wettability by apply
   \label{dynamic electric potential}
 \end{equation}
 
-\noindent where $\phi_0$ is the peak amplitude of electric potential, $f$ is the oscillation frequency, and $\alpha$ characterizes the radial decay of the electric potential, accounting for the influence of a uniform resistance on the potential distribution along the dielectric layer. The computational domain is taken as $8R \times 8R$ to ensure sufficient space for droplet deformation and spreading during impact and subsequent evolution. The bottom of the computational domain ($z = 0$) is a no-slip boundary condition, and the left ($r = 0$) is an axisymmetric boundary condition. All remaining boundaries of the computational domain are open boundary conditions.
+\noindent where $\phi_0$ is the peak amplitude of electric potential, $f$ is the oscillation frequency, and $\alpha$ characterizes the radial decay of the electric potential, accounting for the influence of a uniform resistance on the potential distribution along the dielectric layer. The computational domain is taken as $10D \times 10D$ to ensure sufficient space for droplet deformation and spreading during impact and subsequent evolution. The bottom of the computational domain ($z = 0$) is a no-slip boundary condition, and the left ($r = 0$) is an axisymmetric boundary condition. All remaining boundaries of the computational domain are open boundary conditions.
 
 Building upon earlier incompressible flow theories \citep{smith_air_2003, korobkin_trapping_2008}, \citet{mandre_precursors_2009} derived a criterion to assess the relevance of gas compressibility during high-velocity droplet impacts. Specifically, they introduced a non-dimensional compressibility parameter defined as the ratio between the ambient atmospheric pressure and a characteristic lubrication pressure in the gas layer:
 
@@ -201,7 +203,7 @@ To ensure the accuracy and reliability of the numerical model, simulation result
 
  \begin{figure}
   \centerline{\includegraphics[width=0.5\textwidth]{fig/mesh.pdf}}
-  \caption{Comparison of drop spreading radius during impact process obtained from simulations at $We=20$.}
+  \caption{Verification of grid independence for the droplet spreading radius during impact, based on simulations performed at $\mathit{We}=20$.}
  \label{fig:mesh}
  \end{figure}
 
@@ -209,13 +211,11 @@ For grid independence, we compare the spreading radius with time obtained from s
 
 \section{Results}\label{sec:Results}
 
-In order to compare the dynamics of droplet motion, we first deployed droplets to impact on substrates with the same initial static contact angle, $\theta_{\mathrm{s}} = 90^\circ$. The droplets go through three distinct stages: spreading, retracting, and rebounding, before eventually detaching from the substrate. To actively control the contact angle during these dynamics, a voltage is applied between the conducting droplet and an underlying insulated electrode. This configuration, typical of the electrowetting-on-dielectric (EWOD) setup, consists of a hydrophobic dielectric layer that electrically isolates the droplet from the conductive substrate. When the electric field is activated, charges accumulate on the droplet side of the dielectric layer, forming a capacitor-like structure. This localized charge distribution results in a reduction of the interfacial energy near the contact line, thereby decreasing the apparent contact angle $\theta_{\mathrm{ED}}$ of the droplet. The variation of the contact angle $\theta_{\mathrm{ED}}$ with applied voltage is governed by the Young-Lippmann equation. To investigate the role of electric potential decay in electrowetting-induced wettability changes, we conduct droplet impact experiments at fixed dimensionless parameters, $Oh = 2.621 \times 10^{-3}$ and $Bo = 0.536$.
+In order to compare the dynamics of droplet motion, we first deployed droplets to impact on substrates with the same initial static contact angle, $\theta_{\mathrm{s}} = 90^\circ$. The motion of the droplets can be divided into three stages: spreading, retracting, and rebounding, after which they detach from the substrate. To actively control the contact angle during these dynamics, a voltage is applied between the conducting droplet and an underlying insulated electrode. This configuration, typical of the electrowetting-on-dielectric (EWOD) setup, consists of a hydrophobic dielectric layer that electrically isolates the droplet from the conductive substrate. When the electric field is activated, charges accumulate on the droplet side of the dielectric layer, forming a capacitor-like structure. This localized charge distribution results in a reduction of the interfacial energy near the contact line, thereby decreasing the apparent contact angle $\theta_{\mathrm{ED}}$ of the droplet. The variation of the contact angle $\theta_{\mathrm{ED}}$ with applied voltage is governed by the Young-Lippmann equation. To investigate the role of electric potential decay in electrowetting-induced wettability changes, we conduct droplet impact experiments at fixed dimensionless parameters, $Oh = 2.621 \times 10^{-3}$ and $Bo = 0.536$.
 
 \subsection{Phase Diagram and Classification of Electrowetting-Induced Wettability}
 
 When droplet impact the substrate with different electrowetting-induced wettability, it exhibits distinct dynamic reaction owing to voltage-induced variations in the equilibrium contact angle. Since the contact angle governs the balance of interfacial forces, the difference in wettability significantly influences the spreading, retraction, and rebound behaviour of the droplet. On a substrate with an equilibrium contact angle of $90^\circ$, the droplet follows the classical sequence of spreading, receding, and rebounding. At low impact velocities (i.e., low Weber numbers), the droplet may remain entirely separated from the substrate by a thin air layer, resulting in non-contact bouncing. At sufficiently high Weber numbers, the droplet undergoes splashing, with the emission of secondary droplets. To systematically characterise the influence of electrowetting, we construct a phase diagram in the applied voltage-Weber number plane that delineates the regimes of droplet impact behaviour under varying wettability conditions. Figure \ref{fig:phase} delineates the behavioural phase diagram of droplet impact regimes across applied voltages and Weber numbers, encompassing low-velocity complete rebound and cavity-induced jetting, alongside moderate-to-high-velocity partial rebound, deposition, and columnar liquid jetting regimes.
-
-
 
  \begin{figure}
   \centerline{\includegraphics[width=0.8\textwidth]{fig/phase.pdf}}
@@ -223,7 +223,7 @@ When droplet impact the substrate with different electrowetting-induced wettabil
  \label{fig:phase}
  \end{figure}
 
- Figure \ref{fig:dropA} presents a morphological chronology of droplet evolution across distinct regimes, capturing the complete progression from initial contact to final configuration. Sequentially arranged are: columnar jetting, partial rebound, deposition, cavity-induced breakup, and complete rebound -- corresponding to the phase diagram's open-circle markers. Key features include central jet ejection (columnar jetting), necking phenomena (partial rebound), and filamentous jets (cavity regime/breakup), while deposition and complete rebound are distinguished by their final equilibrium states.
+ Figure \ref{fig:dropA} presents a morphological chronology of droplet evolution across distinct regimes, capturing the complete progression from initial contact to final configuration. Sequentially arranged are: columnar jetting, partial rebound, deposition, cavity-induced breakup, and complete rebound -- corresponding to the cases of the phase diagram's open-circle markers. Key features include central jet ejection (columnar jetting), necking phenomena (partial rebound), and filamentous jets (cavity regime/breakup), while deposition and complete rebound are distinguished by their final equilibrium states.
 
 
  \begin{figure}
@@ -232,21 +232,19 @@ When droplet impact the substrate with different electrowetting-induced wettabil
  \label{fig:dropA}
  \end{figure}
  
- When a droplet impacts a solid wall at relatively high velocity, it typically exhibits splashing. For low-viscosity droplets, however, splashing behaviour is typically suppressed \citep{jian_two_2018}. Upon contacting the substrate, the droplet's kinetic energy undergoes rapid conversion into surface energy. This process drives spreading to a maximum radius. Subsequently, under the influence of significant surface energy potential, the droplet undergoes accelerated retraction. Capillary waves converging radially inwards from the spreading periphery focusing at the axisymmetric centre, thereby initiating vertical columnar jet formation. Figure \ref{fig:cojet} illustrates the droplet impact sequence from initial spreading through retraction to capillary wave convergence culminating in vertical liquid jet formation. Conversely, the cavity-jet/breakup regime manifests at low Weber numbers. Here, the air film at the droplet's base remains intact throughout impact. During spreading, slow-propagating capillary waves converge centrally, generating an axial cavity. Subsequent accelerated retraction causes cavity collapse, inducing high-velocity jet ejection. This process typically culminates in extensive fragmentation due to vapour cavity implosion. Figure \ref{fig:cajet} delineates the complete evolution of central cavity formation through collapse-induced jetting. The implosion-driven jets exhibit elevated stagnation pressures, yielding ejected micro-droplets with enhanced velocities and reduced diameters.
+ When a droplet impacts a solid wall at relatively high velocity, it typically exhibits splashing. For low-viscosity droplets, however, splashing behaviour is normally suppressed \citep{jian_two_2018}. Upon contacting the substrate, the droplet's kinetic energy is rapidly converted into surface energy, driving the spreading until the maximum radius is reached. Subsequently, under the influence of significant surface energy potential, the droplet retracts rapidly. The radially inward convergence of capillary waves from the spreading periphery focuses at the axisymmetric centre, resulting in the formation of a vertical columnar jet. Figure \ref{fig:cojet} shows the droplet impacting sequence, tracing the droplet from spreading through retraction to capillary wave focusing and vertical liquid jet formation. Conversely, at low Weber numbers, the cavity-jet/breakup regime is observed. In this regime, the air film beneath the droplet remains intact throughout the spreading process. And the convergence of slowly propagating capillary waves during spreading forms a central cavity. Subsequent accelerated retraction causes cavity collapse, inducing high-velocity jet ejection. This process typically results in prompt and extensive fragmentation due to vapour cavity implosion. Figure \ref{fig:cajet} illustrates the complete evolution of central cavity formation through collapse-induced jetting. The implosion-driven jets exhibit elevated pressures, resulting in ejected microdroplets with enhanced velocities and reduced diameters.
 
  \begin{figure}
   \centerline{\includegraphics[width=1.0\textwidth]{fig/cojet.pdf}}
-  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
+  \caption{The formation process of columnar jet droplets. The left snapshots show the magnitude of the velocity field normalized by the initial impact velocity, and the left snapshots show the dimensionless pressure. The black arrow is the velocity vector of flow. The blue line represents the interface between the droplet and the surrounding gas.}
  \label{fig:cojet}
  \end{figure}
 
  \begin{figure}
   \centerline{\includegraphics[width=1.0\textwidth]{fig/cajet.pdf}}
-  \caption{Phase diagrams of the motion state of a droplet impacting with the applied voltage varies obtained from simulations.}
+  \caption{The formation process of cavity jet/breakup droplets. The left snapshots show the magnitude of the velocity field normalized by the initial impact velocity, and the left snapshots show the dimensionless pressure. The black arrow is the velocity vector of flow. The blue line represents the interface between the droplet and the surrounding gas.}
  \label{fig:cajet}
  \end{figure}
-
-
 
  Within the moderate impact velocity regime, droplets typically achieve extensive spreading radii. Owing to substantial surface energy storage, accelerated retraction imparts sufficient kinetic energy to induce necking phenomena, ultimately enabling rebound detachment (partial rebound). In contrast, during deposition events, droplets possess insufficient kinetic energy upon impact. Significant viscous dissipation during spreading depletes momentum reserves, precluding rebound. Consequently, residual energy is exhausted through damped capillary-inertial oscillations until complete immobilisation (deposition). 
 
@@ -353,38 +351,99 @@ $\gamma_{\rm LG}\cos\theta_{\rm s}=\gamma_{\rm SG}-\gamma_{\rm SL}$, the change 
 
  \begin{figure}
   \centerline{\includegraphics[width=0.4\textwidth]{fig/decay.pdf}}
-  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
- \label{fig:energy}
+  \caption{Radial variation of the substrate contact angle, $\theta_{\rm ew}$, induced by electrowetting. The parameter $\alpha$ denotes different electric potential decay coefficients, from $1$ to $5$.}
+ \label{fig:decay}
  \end{figure}
+
+ Incorporating a voltage decay coefficient into this model induces profound alterations in droplet dynamics. Modifying the $\alpha$-parameter in Equation~\ref{dynamic electric potential} drastically perturbs the interfacial voltage distribution. Consequently, the formerly uniform solid-liquid contact angle is supplanted by a conical distribution-minimised centrally and maximised peripherally-owing to voltage decay. Figure \ref{fig:decay} illustrates the variation of the contact angle in the radial direction under electrowetting conditions for different decay coefficients $\alpha$. This funnel-like contact angle profile enables the droplet to achieve a reduced contact angle upon initial substrate contact. As the droplet spreads, the contact angle progressively increases. Compared to uniform electrowetting surfaces, this configuration promotes enhanced droplet retraction and rebound.
+
+ Figure \ref{fig:dropR} presents the temporal evolution of the droplet spreading radius under various decay coefficients of electric potential, ranging from 0.01 to 5. Interrupted curves indicate the occurrence of partial rebound, where the droplet detaches and emits secondary droplets. It can be observed that for the decay coefficients of electric potential below 0.5, the droplet maintains a deposition state. However, as the decay coefficients of electric potential increases, the maximum spreading radius diminishes, and the droplet exhibits a heightened tendency towards partial rebound. As $\alpha$ approaches infinity, the droplet spreading behaviour converges towards that of impact onto a surface with a static $90^\circ$ contact angle. Conversely, as $\alpha$ tends to zero, the spreading behaviour increasingly resembles the case of droplet impact under full electrowetting activation with a uniform contact angle $\theta_{\rm ew}$.
+
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.6\textwidth]{fig/dropR.pdf}}
+  \caption{Temporal evolution of the normalized droplet spreading diameter versus normalized time for electric potential decay coefficients $\alpha$ ranging from 0.010 to 4.605.}
+ \label{fig:dropR}
+ \end{figure}
+
+ Subsequently, the energy evolution corresponding to 9 distinct values of the electrical dissipation coefficient $\alpha$ is plotted in figure~\ref{fig:ETC}. It is observed that as $\alpha$ increases, the energy distribution shifts from a low-dissipation regime, in which kinetic energy is fully dissipated, to a high-dissipation regime, where kinetic and surface energies undergo mutual conversion. Moreover, at the same final time, the proportion of surface energy increases with $\alpha$. This trend is attributed to droplet partial rebound during retraction, which leads to the ejection of satellite droplets and a consequent significant increase in total surface area. Simultaneously, gravitational potential energy increases during retraction, ultimately converting into kinetic energy that facilitates partial rebound and detachment from the substrate. This behaviour contrasts with the deposition observed for lower $\alpha$ values (first row of the figure~\ref{fig:ETC}), wherein the droplet undergoes damped oscillations characterised by cyclic exchanges between gravitational potential and surface energy until the kinetic energy is fully dissipated.
 
  \begin{figure}
   \centerline{\includegraphics[width=1.0\textwidth]{fig/dropETC.pdf}}
-  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
- \label{fig:energy}
+  \caption{Temporal evolution of energy conversion during droplet impact on the substrate. From left to right, the panels correspond to increasing values of the electric potential decay coefficients $\alpha$ (from $0.010$ to $4.605$), identical to those in Figure~\ref{fig:dropR}. The abscissa indicates the dimensionless time, and the ordinate shows the partition among kinetic, surface, gravitational energies and dissipation.}
+ \label{fig:ETC}
  \end{figure}
 
+To better characterise the evolution of kinetic energy, Figure~\ref{fig:EK} presents the kinetic energy as a function of time. The electrical dissipation coefficient $\alpha$ is shown to directly influence the kinetic energy profile. The kinetic energy reaches its minimum when the droplet attains its maximum spreading radius, at which point the kinetic energy is fully converted into surface energy, in line with the peak of the spreading radius curve. Subsequently, during rapid retraction, surface energy is converted back into kinetic energy, yielding the first peak in kinetic energy.
 
- Incorporating a voltage attenuation coefficient into this model induces profound alterations in droplet dynamics. Modifying the $\alpha$-parameter in Equation~\ref{dynamic electric potential} drastically perturbs the interfacial voltage distribution. Consequently, the formerly uniform solid-liquid contact angle is supplanted by a conical distribution-minimised centrally and maximised peripherally-owing to voltage decay.
+It is evident that increasing $\alpha$ markedly advances the time at which this first kinetic energy peak occurs. This is because the retraction phase is dominated by regions of high effective contact angle (approaching the $90^\circ$ retraction behaviour), which generally promotes higher kinetic energy recovery. In the later stages of retraction, the reduction in contact angle has limited influence on kinetic energy (serving mainly to delay the second kinetic energy peak during rebound), meaning that higher values of $\alpha$ typically result in greater kinetic energy available for rebound.
 
-
+At low $\alpha$, the droplet cannot overcome the wetting influence of the substrate in the mid to late stages of retraction. The droplet undergoes oscillations during which kinetic energy is progressively dissipated, ultimately leading to deposition. In contrast, at high $\alpha$, the first kinetic energy peak attained during retraction is sufficiently large to overcome substrate adhesion, resulting in partial rebound.
 
  \begin{figure}
-  \centerline{\includegraphics[width=0.8\textwidth]{fig/dropR.pdf}}
-  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
- \label{fig:energy}
+  \centerline{\includegraphics[width=0.6\textwidth]{fig/dropEK.pdf}}
+  \caption{Evolution of the kinetic energy fraction with dimensionless time for different electric potential dissipation coefficients $\alpha$ during the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the kinetic energies.}
+ \label{fig:EK}
  \end{figure}
+
+ Through temporal integration of the energy energy over time on the wetted surface, the electrical work expenditure $W_{\rm ew}$ effectively acting on the wetting behaviour of the substrate is obtained, shown in figure~\ref{fig:EW}. This smoothed profile serves as a measure of the fraction of electrical energy actually consumed in altering the contact angle. It is shown that for lower values of the electrical dissipation coefficient $\alpha$, a greater proportion of electrical energy is directly utilised to modify the contact angle during droplet spreading. This arises because the evolution of wetting energy does not follow a simple linear trend, but rather evolves through three distinct phases, owing to the funnel-like distribution of the substrate contact angle during both spreading and retraction. Furthermore, this component of energy increases most rapidly during the spreading stage, then enters a plateau region in the early retraction phase, and continues to increase at a reduced rate in the later retraction stage. Only once the droplet has stabilised on the substrate does $W_{\rm ew}$ attain a steady value.
 
  \begin{figure}
-  \centerline{\includegraphics[width=0.8\textwidth]{fig/dropH.pdf}}
-  \caption{The energy transformations during the formation of (a) partial rebound, (b) deposition in the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the three energies.}
- \label{fig:energy}
+  \centerline{\includegraphics[width=0.6\textwidth]{fig/dropEW.pdf}}
+  \caption{Evolution of electrical work expenditure $W_{\rm ew}$ effectively acting on the wetting of the substrate with dimensionless time for different electric potential dissipation coefficients $\alpha$ during the process of droplet impact on the substrate. The horizontal axis represents dimensionless time, and the vertical axis represents the distribution of the kinetic energies.}
+ \label{fig:EW}
  \end{figure}
 
+ A particularly intriguing outcome arises when electrode geometry and placement are tailored to exploit potential dissipation, thereby enabling precise control of droplet morphology. At $We=100$ and an applied potential of $350\,\mathrm{V}$, dissipation-driven modulation permits the formation of a ring-shaped droplet with remarkable ease--an outcome otherwise difficult to achieve by merely altering substrate chemistry. This effect relies on a highly resistive annular electrode positioned at the droplet diameter, where the potential field is prescribed as
 
+\begin{equation}
+  \phi(r,t) = \phi_0 \cos(2\pi f t) \cdot \mathrm{e}^{- \alpha (r-r_0)^n}.
+  \label{eq:ring dissipation}
+\end{equation}
+
+ \noindent In this formulation, $\alpha \gg 1$ quantifies the coefficient of electric potential decay, $n=30$ controls the width of the annular field, and $r_0 = D_0$ fixes its radial location. As demonstrated in Figure~\ref{fig:ring_theta}, the corresponding distribution of contact angle along the radial direction mimics a square-wave profile, yet remains governed by the electric potential decay functional form. Such electrode-enabled control offers a powerful and effective strategy for manipulating droplet dynamics beyond conventional surface treatments.
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.4\textwidth]{fig/ring_theta.pdf}}
+  \caption{Radial variation of the electrowetting-induced substrate contact angle $\theta_{\rm ew}$ for an annular electrode with the coefficient of electric potential decay taken into account.}
+ \label{fig:ring_theta}
+ \end{figure}
+
+ As for the formation of the annular droplet, the mechanism is similar to that induced by a wettability discontinuity. The droplet first undergoes complete spreading and wetting. Subsequent retraction towards the centre generates intense capillary waves, which converge at the droplet's axis. These waves induce pronounced vertical oscillations on the upper surface of the droplet. As the amplitude of these oscillations increases, the rising liquid interface interacts with an entrapped gas cavity, ultimately triggering the formation of a central through-hole. The droplet then retracts radially outward from this hole, eventually stabilising into a toroidal structure. A detailed dynamical description and energy analysis of this process has been provided in our previous publication and is therefore not repeated here.
+
+ \begin{figure}
+  \centerline{\includegraphics[width=1.0\textwidth]{fig/ring.pdf}}
+  \caption{The formation process of ring-shaped droplets. The left snapshots show the magnitude of the velocity field normalized by the initial impact velocity, and the left snapshots show the dimensionless pressure. The black arrow is the velocity vector of flow. The blue line represents the interface between the droplet and the surrounding gas.}
+ \label{fig:ring}
+ \end{figure}
+
+ 
 
 \subsection{Frequency-Dependent Response of Electrowetting-Induced Motion}
 
+ The frequency of electrowetting significantly influences the wetting radius and oscillation amplitude of a sessile droplet. A sessile droplet subjected to an alternating electrowetting signal exhibits vertical oscillations. However, the manner in which frequency variation affects droplet spreading and retraction during impact remains an open question. To investigate this, we varied the driving frequency $f$ from 25 to 8000 Hz. This frequency sweep induces a cyclic variation of the contact angle at the wall, which decreases from $90^\circ$ to a minimum value (approximately $60^\circ$) and then returns to $90^\circ$, following a cosine functional form. Such variation in contact angle alters the force balance associated with wetting dynamics throughout the droplet's motion. Figure~\ref{fig:freq} illustrates the temporal evolution of the contact angle at the substrate for different driving frequencies.
 
+ \begin{figure}
+  \centerline{\includegraphics[width=0.4\textwidth]{fig/Freq.pdf}}
+  \caption{Comparison of drop spreading radius during impact process obtained from simulations at $We=20$.}
+ \label{fig:freq}
+ \end{figure}
+
+ At the moment the droplet is released, the voltage is activated on the substrate, inducing a time-dependent contact angle variation governed by the Young-Lippmann equation. Since the contact angle remains consistently below $90^\circ$, no thin air film forms between the droplet and the substrate upon contact. Consequently, the spreading and retraction dynamics are entirely governed by the evolving substrate contact angle. The Weber number of the droplet impact was fixed at 35 and the voltage amplitude at 180 V to ensure that the droplet's motion remained within the deposition regime. Throughout the deposition process, the droplet initially impacts the substrate, then gradually equilibrates under the combined influence of inertial and capillary forces, and ultimately stabilises on the surface. Even with increasing voltage frequency, the droplet continues to exhibit the characteristic dynamic stages of spreading, retraction, and rebounding during the process of deposition.
+
+
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.6\textwidth]{fig/DropRHz.pdf}}
+  \caption{Comparison of drop spreading radius during impact process obtained from simulations at $We=20$.}
+ \label{fig:freq}
+ \end{figure}
+
+ \begin{figure}
+  \centerline{\includegraphics[width=0.6\textwidth]{fig/DropHHz.pdf}}
+  \caption{Comparison of drop spreading radius during impact process obtained from simulations at $We=20$.}
+ \label{fig:freq}
+ \end{figure}
 
 
 
